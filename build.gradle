@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group = 'com.example'
+    version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+    // Intentionally vulnerable dependencies
+    dependencies {
+        implementation 'commons-collections:commons-collections:3.2.1'
+        implementation 'org.apache.logging.log4j:log4j-core:2.13.0'
+        implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
+        implementation 'com.google.guava:guava:23.0'
+        implementation 'commons-io:commons-io:2.4'
+        implementation 'xerces:xercesImpl:2.11.0'
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    dependencies {
+        testImplementation 'junit:junit:4.12'
+    }
+}
