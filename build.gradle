@@ -13,7 +13,7 @@ allprojects {
     // Intentionally vulnerable dependencies
     dependencies {
         implementation 'commons-collections:commons-collections:3.2.1'
-        implementation 'org.apache.logging.log4j:log4j-core:2.13.0'
+        implementation 'org.apache.logging.log4j:log4j-core:2.25.2'
         implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
         implementation 'com.google.guava:guava:23.0'
         implementation 'commons-io:commons-io:2.4'
@@ -31,6 +31,6 @@ subprojects {
         testImplementation 'junit:junit:4.12'
 
         customPackaged 'commons-collections:commons-collections:3.2.1'
-        customPackaged 'org.apache.logging.log4j:log4j-core:2.13.0'
+        customPackaged 'org.apache.logging.log4j:log4j-core:2.25.2'
     }
 }
