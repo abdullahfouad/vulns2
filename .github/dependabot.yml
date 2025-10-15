@@ -6,6 +6,8 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "/"   # Root directory of your project (where build.gradle is)
+    directory: "/"
     schedule:
       interval: "daily"
+    target-branch: "develop"
+
