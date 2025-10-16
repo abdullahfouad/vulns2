@@ -1,0 +1,24 @@
+name: Dependency Submission
+on:
+  push:
+    branches: [ 'main' ] # Also run on pushes to your main branch for a complete base graph
+  pull_request:
+  # Trigger on PR to generate the snapshot for the head branch
+permissions:
+  contents: write # 👈 CRITICAL: Required to upload the dependency snapshot
+jobs:
+  submit_dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17' # Use a Java version compatible with your Gradle project
+
+      - name: Generate and Submit Dependency Graph
+        # 👈 This action reads your build.gradle and sends the graph to GitHub
+        uses: gradle/actions/dependency-submission@v3
